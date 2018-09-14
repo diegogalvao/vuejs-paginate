@@ -77,7 +77,6 @@ describe('Paginate', () => {
       const nextButton = vm.$el.querySelector("li:last-child a")
       nextButton.click()
       Vue.nextTick(() => {
-
         expect(vm.$el.querySelector(".active a").textContent).to.equal("6")
        
 
@@ -98,7 +97,7 @@ describe('Paginate', () => {
           forcePage: 5
         }
       }).$mount()
-
+      
       expect(vm.$el.querySelector(".active a").textContent).to.equal("6")
       const nextButton = vm.$el.querySelector("li:last-child a")
       nextButton.click()

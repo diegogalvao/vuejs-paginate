@@ -218,10 +218,15 @@ export default {
       this.clickHandler(selected)
     },
     prevPage() {
-      if (this.selected <= 1) return
-
-      this.$emit('input', this.selected - 1)
-      this.clickHandler(this.selected - 1)
+      var selected = this.selected;
+      if (this.forcePage !== undefined) {
+        selected = this.forcePage
+      }else{
+        if (selected <= 1) return
+        selected = selected - 1
+      };
+      this.$emit('input', selected)
+      this.clickHandler(selected)
     },
     nextPage() {
       if (this.selected >= this.pageCount) return
